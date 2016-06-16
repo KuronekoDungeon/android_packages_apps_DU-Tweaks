@@ -66,6 +66,17 @@
             android:summary="@string/fprint_sucess_vib_summary"
             android:defaultValue="true" />
 
+
+        <!--Captive server-->
+        <com.dirtyunicorns.dutweaks.preference.SystemSettingSwitchPreference
+            android:key="captive_portal_detection_enabled"
+            android:title="@string/captive_portal_detection"
+            android:summary="@string/captive_portal_detection_summary"
+            android:defaultValue="true" />
+        <PreferenceScreen
+            android:key="captive_portal_server"
+            android:title="@string/captive_portal_server" />
+
         <PreferenceCategory
             android:key="gestures_category"
             android:title="@string/gestures_category" />

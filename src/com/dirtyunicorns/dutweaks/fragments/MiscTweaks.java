@@ -30,7 +30,13 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
+import android.text.TextUtils;
+import android.text.Spannable;
 import android.util.Log;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.widget.LinearLayout;
+import android.widget.EditText;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -57,6 +63,7 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
     private static final String ENABLE_TASK_MANAGER = "enable_task_manager";
     private static final String SELINUX = "selinux";
     private static final String FLASHLIGHT_NOTIFICATION = "flashlight_notification";
+    private static final String CAPTIVE_PORTAL_SERVER = "captive_portal_server";
 
     private FingerprintManager mFingerprintManager;
     private ListPreference mMsob;
@@ -66,6 +73,9 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
     private SwitchPreference mEnableTaskManager;
     private SwitchPreference mSelinux;
     private SwitchPreference mFlashlightNotification;
+    
+    private PreferenceScreen mServer;
+    private String mServerText="g.cn";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,7 +89,10 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
         //SELinux
         mSelinux = (SwitchPreference) findPreference(SELINUX);
         mSelinux.setOnPreferenceChangeListener(this);
-
+        
+        mServer = (PreferenceScreen) findPreference(CAPTIVE_PORTAL_SERVER);
+        updateServerTextSummary();
+        
         if (CMDProcessor.runShellCommand("getenforce").getStdout().contains("Enforcing")) {
             Log.d(TAG, "cmdline: selinux:Enforcing");
             mSelinux.setChecked(true);
@@ -134,7 +147,60 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
             prefScreen.removePreference(mFingerprintVib);
         }
     }
+    
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mServer) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+            alert.setTitle(R.string.captive_portal_server);
+            alert.setMessage(R.string.captive_portal_server_explain);
+            LinearLayout parent = new LinearLayout(getActivity());
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT);
+            parent.setLayoutParams(params);
+            // Set an EditText view to get user input
+            final EditText input = new EditText(getActivity());
+            input.setText(TextUtils.isEmpty(mServerText) ? ""
+                    : mServerText);
+            input.setSelection(input.getText().length());
+            params.setMargins(60, 0, 60, 0);
+            input.setLayoutParams(params);
+            parent.addView(input);
+            alert.setView(parent);
+            alert.setPositiveButton(getString(android.R.string.ok),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog,
+                                int whichButton) {
+                            String value = ((Spannable) input.getText())
+                                    .toString().trim();
+                            Settings.Global
+                                    .putString(
+                                            getActivity().getContentResolver(),
+                                            Settings.Global.CAPTIVE_PORTAL_SERVER,
+                                            value);
+                            updateServerTextSummary();
+                        }
+                    });
+            alert.setNegativeButton(getString(android.R.string.cancel), null);
+            alert.show();
+        } else {
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
+        }
 
+        return false;
+    }
+
+    private void updateServerTextSummary() {
+        mServerText = Settings.Global.getString(
+            getActivity().getContentResolver(), Settings.Global.CAPTIVE_PORTAL_SERVER);
+
+        if (TextUtils.isEmpty(mServerText)) {
+            mServer.setSummary(R.string.captive_portal_server_notset);
+        } else {
+            mServer.setSummary(mServerText);
+        }
+    }
+    
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.DIRTYTWEAKS;
