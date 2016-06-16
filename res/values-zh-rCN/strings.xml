@@ -681,6 +681,9 @@
   <string name="lockscreen_wallpaper_set_title">设置锁屏壁纸</string>
   <string name="lockscreen_wallpaper_clear_title">恢复为默认</string>
   <string name="reset_lockscreen_wallpaper">重置锁屏壁纸为默认</string>
+  <!-- Show Chinese Date -->
+  <string name="show_chinese_date_title">锁屏显示农历</string>
+  <string name="show_chinese_date_summary">锁屏界面显示农历日期</string>
   <!-- Slim lockscreen shortcuts -->
   <string name="shortcut_action_none">无</string>
   <string name="shortcut_action_longpress">长按：</string>

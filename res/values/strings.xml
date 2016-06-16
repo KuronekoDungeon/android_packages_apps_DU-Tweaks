@@ -755,6 +755,9 @@
     <string name="lockscreen_wallpaper_set_title">Set new wallpaper</string>
     <string name="lockscreen_wallpaper_clear_title">Return to default</string>
     <string name="reset_lockscreen_wallpaper">Lockscreen wallpaper set back to default</string>
+    <!-- Show Chinese Date -->
+    <string name="show_chinese_date_title">Show Chinese Date</string>
+    <string name="show_chinese_date_summary">Show Chinese Date On Lockscreen</string>
 
     <!-- Slim lockscreen shortcuts -->
     <string name="shortcut_action_none">None</string>
