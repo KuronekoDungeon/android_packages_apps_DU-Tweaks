@@ -68,11 +68,11 @@
 
 
         <!--Captive server-->
-        <com.dirtyunicorns.dutweaks.preference.SystemSettingSwitchPreference
+        <!--com.dirtyunicorns.dutweaks.preference.SystemSettingSwitchPreference
             android:key="captive_portal_detection_enabled"
             android:title="@string/captive_portal_detection"
             android:summary="@string/captive_portal_detection_summary"
-            android:defaultValue="true" />
+            android:defaultValue="true" /-->
         <PreferenceScreen
             android:key="captive_portal_server"
             android:title="@string/captive_portal_server" />

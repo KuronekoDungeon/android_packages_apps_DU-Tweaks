@@ -840,11 +840,11 @@
   <string name="selinux_enforcing_title">执行中</string>
   <string name="selinux_permissive_toast_title">Selinux设置为许可</string>
   <!-- Captive Portal -->
-  <string name="captive_portal_detection">网络状况检测</string>
-  <string name="captive_portal_detection_summary">如果状态栏有感叹号，可关闭网络状况检测</string>	
-  <string name="captive_portal_server">自定义验证服务器</string>
+  <!--string name="captive_portal_detection">网络状况检测</string>
+  <string name="captive_portal_detection_summary">如果状态栏有感叹号，可关闭网络状况检测</string-->	
+  <string name="captive_portal_server">自定义网络状况验证服务器</string>
   <string name="captive_portal_server_notset">未填写验证服务器</string>
-  <string name="captive_portal_server_explain">自定义验证服务器，修改完成需要重启或者关闭打开飞行模式</string>
+  <string name="captive_portal_server_explain">自定义网络状况验证服务器，修改完成需要重启或者关闭打开飞行模式</string>
   <!-- Hide Lockscreen clock, date & alarm -->
   <string name="hide_lockscreen_items_title">锁屏界面项目</string>
   <string name="hide_lockscreen_clock_title">时钟</string>
