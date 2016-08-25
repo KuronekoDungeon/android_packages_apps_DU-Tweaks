@@ -43,9 +43,9 @@
     </string-array>
 
     <string-array name="qs_num_columns_entries">
-        <item>Three</item>
-        <item>Four</item>
-        <item>Five</item>
+        <item>@string/qs_num_columns_three</item>
+        <item>@string/qs_num_columns_four</item>
+        <item>@string/qs_num_columns_five</item>
     </string-array>
 
     <!-- Immersive Recents -->
@@ -104,30 +104,6 @@
         <item>15</item>
         <item>16</item>
         <item>17</item>
-    </string-array>
-
-    <!-- Download Center - Gapps -->
-    <string-array name="gapps_list">
-        <item>Banks Gapps</item>
-        <item>DU TBO GAPPS (black)</item>
-        <item>DU TBO GAPPS (clear)</item>
-    </string-array>
-
-    <string-array name="gapps_list_url" translatable="false">
-        <item>http://download.dirtyunicorns.com/files/misc/misc/BANKS_GAPPS_6.XX.zip</item>
-        <item>http://download.dirtyunicorns.com/files/misc/misc/DU_TBO_GAPPS.zip</item>
-        <item>http://download.dirtyunicorns.com/files/misc/misc/DU_TBO_GAPPS_CLEAR.zip</item>
-    </string-array>
-
-    <!-- Download Center - Tomahawk -->
-    <string-array name="tomahawk_list">
-        <item>Tomahawk (armv7a)</item>
-        <item>Tomahawk (x86)</item>
-    </string-array>
-
-    <string-array name="tomahawk_list_url">
-        <item>http://download.dirtyunicorns.com/files/misc/tomahawk-armv7a.apk</item>
-        <item>http://download.dirtyunicorns.com/files/misc/tomahawk-x86.apk</item>
     </string-array>
 
     <!-- Advanced reboot menu dev options -->
@@ -447,10 +423,10 @@
 
     <!-- Battery bar -->
     <string-array name="battery_bar_entries">
-        <item>Hide</item>
-        <item>Statusbar</item>
-        <item>Top of navbar</item>
-        <item>Bottom of navbar</item>
+        <item>@string/battery_bar_hide</item>
+        <item>@string/battery_bar_statusbar</item>
+        <item>@string/battery_bar_top_navbar</item>
+        <item>@string/battery_bar_bottom_navbar</item>
     </string-array>
 
     <string-array name="battery_bar_values" translatable="false">
@@ -877,12 +853,6 @@
         <item>**null**</item>
     </string-array>
 
-    <!-- SlimSizer -->
-    <string-array name="slimsizer_profile_array">
-        <item >Load Profile</item>
-        <item >Save Profile</item>
-    </string-array>
-
     <!-- Power menu Animations  -->
     <string-array name="power_menu_animations_entries">
         <item>@string/power_menu_animation_aosp</item>
@@ -1016,61 +986,50 @@
     </string-array>
 
     <!-- Pulse config -->
-    <string-array name="pulse_custom_dimen_entries">
-       <item>@string/pulse_dimen0</item>
-       <item>@string/pulse_dimen1</item>
-       <item>@string/pulse_dimen2</item>
-       <item>@string/pulse_dimen3</item>
-       <item>@string/pulse_dimen4</item>
-       <item>@string/pulse_dimen5</item>
-       <item>@string/pulse_dimen6</item>
-       <item>@string/pulse_dimen7</item>
-       <item>@string/pulse_dimen8</item>
-       <item>@string/pulse_dimen9</item>
-       <item>@string/pulse_dimen10</item>
-       <item>@string/pulse_dimen11</item>
+    <string-array name="pulse_render_mode_entries">
+       <item>@string/pulse_render_mode_fading_bars</item>
+       <item>@string/pulse_render_mode_solid_lines</item>
     </string-array>
 
-    <string-array name="pulse_custom_dimen_values" translatable="false">
+    <string-array name="pulse_render_mode_values" translatable="false">
       <item>0</item>
       <item>1</item>
-      <item>2</item>
-      <item>3</item>
-      <item>4</item>
-      <item>5</item>
-      <item>6</item>
-      <item>7</item>
-      <item>8</item>
-      <item>9</item>
-      <item>10</item>
-      <item>11</item>
     </string-array>
 
-    <!-- Pulse Config  -->
-    <string-array name="pulse_custom_dimen_entries">
-        <item>@string/pulse_dimen0</item>
-        <item>@string/pulse_dimen1</item>
-        <item>@string/pulse_dimen2</item>
-        <item>@string/pulse_dimen3</item>
-        <item>@string/pulse_dimen4</item>
-        <item>@string/pulse_dimen5</item>
-        <item>@string/pulse_dimen6</item>
-        <item>@string/pulse_dimen7</item>
-        <item>@string/pulse_dimen8</item>
-        <item>@string/pulse_dimen9</item>
-        <item>@string/pulse_dimen10</item>
-        <item>@string/pulse_dimen11</item>
-        <item>@string/pulse_dimen12</item>
-        <item>@string/pulse_dimen13</item>
-        <item>@string/pulse_dimen14</item>
-        <item>@string/pulse_dimen15</item>
-        <item>@string/pulse_dimen16</item>
-        <item>@string/pulse_dimen17</item>
-        <item>@string/pulse_dimen18</item>
-        <item>@string/pulse_dimen19</item>
+    <string-array name="expanded_desktop_entries" translatable="false">
+        <item>@string/expanded_hide_both</item>
+        <item>@string/expanded_hide_status</item>
+        <item>@string/expanded_hide_navigation</item>
     </string-array>
 
-    <string-array name="pulse_custom_dimen_values" translatable="false">
+    <string-array name="expanded_desktop_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- DirtyTweaks tabs slide effects -->
+    <string-array name="tabs_effect_entries" translatable="false">
+        <item>@string/effect_default</item>
+        <item>@string/effect_accordion</item>
+        <item>@string/effect_background_to_foreground</item>
+        <item>@string/effect_cube_in</item>
+        <item>@string/effect_cube_out</item>
+        <item>@string/effect_depth_page</item>
+        <item>@string/effect_flip_horizontal</item>
+        <item>@string/effect_flip_vertical</item>
+        <item>@string/effect_foreground_to_background</item>
+        <item>@string/effect_rotate_down</item>
+        <item>@string/effect_rotate_up</item>
+        <item>@string/effect_scale_in_out</item>
+        <item>@string/effect_stack</item>
+        <item>@string/effect_tablet</item>
+        <item>@string/effect_zoom_in</item>
+        <item>@string/effect_zoom_out_slide</item>
+        <item>@string/effect_zoom_out</item>
+    </string-array>
+
+    <string-array name="tabs_effect_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -1088,81 +1047,43 @@
         <item>14</item>
         <item>15</item>
         <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
     </string-array>
 
-    <string-array name="pulse_custom_div_entries">
-        <item>@string/default_div</item>
-        <item>@string/div1</item>
-        <item>@string/div2</item>
-        <item>@string/div3</item>
-        <item>@string/div4</item>
-        <item>@string/div5</item>
-        <item>@string/div6</item>
-        <item>@string/div7</item>
-        <item>@string/div8</item>
+    <!-- Themes tile entries and values -->
+    <string-array name="themes_tile_entries" translatable="false">
+        <item>@string/themes_tile_mods_style_entry</item>
+        <item>@string/themes_tile_mods_statusbar_entry</item>
+        <item>@string/themes_tile_mods_headers_entry</item>
+        <item>@string/themes_tile_mods_navbar_entry</item>
+        <item>@string/themes_tile_mods_launcher_entry</item>
+        <item>@string/themes_tile_mods_lockscreen_entry</item>
+        <item>@string/themes_tile_mods_font_entry</item>
+        <item>@string/themes_tile_mods_icons_entry</item>
+        <item>@string/themes_tile_mods_bootanim_entry</item>
+        <item>@string/themes_tile_mods_notification_entry</item>
+        <item>@string/themes_tile_mods_alarm_entry</item>
+        <item>@string/themes_tile_mods_ringtone_entry</item>
     </string-array>
 
-    <string-array name="pulse_custom_div_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
+    <string-array name="themes_tile_values" translatable="false">
+        <item>@string/themes_tile_mods_style_value</item>
+        <item>@string/themes_tile_mods_statusbar_value</item>
+        <item>@string/themes_tile_mods_headers_value</item>
+        <item>@string/themes_tile_mods_navbar_value</item>
+        <item>@string/themes_tile_mods_launcher_value</item>
+        <item>@string/themes_tile_mods_lockscreen_value</item>
+        <item>@string/themes_tile_mods_font_value</item>
+        <item>@string/themes_tile_mods_icons_value</item>
+        <item>@string/themes_tile_mods_bootanim_value</item>
+        <item>@string/themes_tile_mods_notification_value</item>
+        <item>@string/themes_tile_mods_alarm_value</item>
+        <item>@string/themes_tile_mods_ringtone_value</item>
     </string-array>
 
-    <string-array name="pulse_filled_block_size_entries">
-        <item>@string/default_fill</item>
-        <item>@string/pulse_fill1</item>
-        <item>@string/pulse_fill2</item>
-        <item>@string/pulse_fill3</item>
-        <item>@string/pulse_fill4</item>
+    <string-array name="themes_tile_default_values" translatable="false">
+        <item>@string/themes_tile_mods_style_value</item>
+        <item>@string/themes_tile_mods_statusbar_value</item>
+        <item>@string/themes_tile_mods_headers_value</item>
+        <item>@string/themes_tile_mods_navbar_value</item>
     </string-array>
-
-    <string-array name="pulse_filled_block_size_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
-    <string-array name="pulse_empty_block_size_entries">
-        <item>@string/default_pulse_empty</item>
-        <item>@string/pulse_empty1</item>
-        <item>@string/pulse_empty2</item>
-        <item>@string/pulse_empty3</item>
-        <item>@string/pulse_empty4</item>
-    </string-array>
-
-    <string-array name="pulse_empty_block_size_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
-    <string-array name="pulse_custom_fudge_factor_entries">
-        <item>@string/factor0</item>
-        <item>@string/factor1</item>
-        <item>@string/factor2</item>
-        <item>@string/factor3</item>
-        <item>@string/factor4</item>
-    </string-array>
-
-    <string-array name="pulse_custom_fudge_factor_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
 </resources>

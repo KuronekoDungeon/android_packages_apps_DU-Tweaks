@@ -22,10 +22,6 @@
             android:title="@string/show_running_tasks_title"
             android:defaultValue="false" />
 
-        <PreferenceCategory
-            android:key="stock_recents"
-            android:title="@string/aosp_recents_title" >
-
          <ListPreference
             android:key="immersive_recents"
             android:title="@string/immersive_recents_title"
@@ -34,6 +30,10 @@
             android:entryValues="@array/immersive_recents_values"
             android:summary="@string/power_menu_animation_summary"
             android:persistent="false" />
+
+        <PreferenceCategory
+            android:key="stock_recents"
+            android:title="@string/aosp_recents_title" >
 
         <com.dirtyunicorns.dutweaks.preference.SystemSettingSwitchPreference
             android:key="recents_show_search_bar"
@@ -86,9 +86,10 @@
             android:summary="@string/slim_recents_enable_summary"
             android:defaultValue="false" />
 
-        <SlimSeekBarPreference
+        <CustomSeekBarPreference
             android:key="max_apps"
             android:title="@string/recents_max_apps_title"
+            android:min="5"
             android:dependency="slim_recents" />
 
         <ListPreference
@@ -114,9 +115,12 @@
             android:persistent="true" 
             android:dependency="slim_recents" />
 
-        <SlimSeekBarPreference
+        <CustomSeekBarPreference
             android:key="recent_panel_scale"
-            android:title="@string/recent_panel_scale_title" 
+            android:title="@string/recent_panel_scale_title"
+            android:interval="5"
+            android:defaultValue="100"
+            android:min="60"
             android:dependency="slim_recents" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
