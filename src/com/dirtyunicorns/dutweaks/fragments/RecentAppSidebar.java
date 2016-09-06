@@ -45,7 +45,7 @@ public class RecentAppSidebar extends SettingsPreferenceFragment implements Dial
     private static final String APP_SIDEBAR_OPEN_SIMULTANEOUSLY =
             "recent_app_sidebar_open_simultaneously";
 
-    private SlimSeekBarPreference mAppSidebarScale;
+    //private SlimSeekBarPreference mAppSidebarScale;
     private SwitchPreference mAppSidebarHideLabels;
     private ColorPickerPreference mAppSidebarLabelColor;
     private ColorPickerPreference mAppSidebarBgColor;

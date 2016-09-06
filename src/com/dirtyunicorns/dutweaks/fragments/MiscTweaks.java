@@ -193,8 +193,14 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
             alert.show();
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
+        } else if  (preference == mAdBlockerDisableAds) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.ADBLOCKER_DISABLE_ADS, checked ? 1:0);
+            AdBlocker_Helpers.checkStatus(getActivity());
+            return true;
         }
-
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
         return false;
     }
 
@@ -217,18 +223,6 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
     @Override
     public void onResume() {
         super.onResume();
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if  (preference == mAdBlockerDisableAds) {
-            boolean checked = ((SwitchPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.ADBLOCKER_DISABLE_ADS, checked ? 1:0);
-            AdBlocker_Helpers.checkStatus(getActivity());
-            return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
